@@ -4,35 +4,49 @@ import React from 'react';
 class Header extends React.Component {
   render() {
       return (
-        <div>
-          <img src="small-logo.png" alt="Small Logo" />
-          <h1>Delicious</h1>
-          <h5>THE BEST FOOD BLOG ON THE WEB</h5>
-          <span class="sm-logos-1">
-              <img src="fb-icon.png" alt="Facebook icon" />
-              <img src="twit-icon.png" alt=" Twitter icon" />
-              <img src="gp-icon.png" alt="Google plus icon" />
-              <img src="insta-icon.png" alt="Instagram icon" />
-              <img src="flic-icon.png" alt="Flickr icon" />
-              <img src="pint-icon.png" alt="Pinterest icon" />
-          </span>
-          <span class="sm-logos-2">
-              <img src="rss-icon.png" alt="RSS icon" />
-              <img src="mail-icon.png" alt="Email icon" />
-          </span>
-        </div>
+      <div>
+        <div className="biggest-head">
+          <div className="head">
+              <div class="logo-container-container">
+                <img className="small-logo" src="small-logo.png" alt="Small Logo" />
+                <div class="logo-container">
+                  <h1>Delicious</h1>
+                  <h3>THE BEST FOOD BLOG ON THE WEB</h3>
+                </div>
+                <div class="button-list">
+                <ButtonList />
+                </div>
+              </div>
+          </div>
+        <div className="break"></div>
+      </div>
+
+          <div className="title">
+            <h2>Chocolate Pizza</h2>
+          </div>
+
+          <h6>
+            POSTED ON 15 DEC 2013 / DESSERTS
+            <img className="print" src="print-icon.png" alt="Print Icon" />
+            <caption>PRINT</caption>
+          </h6>
+      </div>
       );
   }
 }
 
-class Title extends React.Component {
+class ButtonList extends React.Component {
   render() {
     return (
-      <div>
-        <h2>Chocolate Pizza</h2>
-        <h6>POSTED ON 15 DEC 2013 / DESSERTS</h6>
-        <img src="print-icon.png" alt="Print Icon" />
-        <caption>PRINT</caption>
+      <div className="button-list">
+              <button class="fb"></button>
+              <button class="twit"></button>
+              <button class="gp"></button>
+              <button class="insta"></button>
+              <button class="flic"></button>
+              <button class="pint"></button>
+              <button class="rss"></button>
+              <button class="mail"></button>
       </div>
     )
   }
@@ -64,58 +78,77 @@ class Recipe extends React.Component {
   }
 }
 
-class Ingredients extends React.Component {
+class IngredientItem extends React.Component {
   render() {
-      return <>
-      <div class="recipe">
-        <ul>
-            <li>1 1/2 cups milk</li>
-            <li>1/2 cup mascarpone</li>
-            <li>1/2 tsp pink salt</li>
-            <li>1 lb Black Mission Figs</li>
-            <li>1/2 cup brown sugar</li>
-            <li>2-4 tbsp water</li>
-        </ul>
-        <ul>
-            <li>1 1/2 cups heavy cream</li>
-            <li>1/3 granulated sugar</li>
-            <li>2 egg yolks</li>
-            <li>1 lemon, juiced</li>
-            <li>2 tbsp butter</li>
-            <li>1 cup honey roasted pecans, roughly chopped</li>
-        </ul>
-      </div>
-          </>
-    }
+    return (
+        <li>
+          <input type="checkbox" />
+            {this.props.amount} {this.props.name}
+        </li>
+    )
   }
+}
 
-class Author extends React.Component {
-    render() {
+class IngredientsList extends React.Component {
+  render() {
       return (
-        <div class="author">
-          <article>
-            <img src="van-pic.png" alt="Author" />
-              <h5>
-                Vanessa Stevenson
-              </h5>
-              <p>
-                Food enthusiast, photography fan. Add a pinch of raw foodism and that's pretty much who I am.
-              </p>
-            <button type="button">SHARE RECIPE</button>
-          </article>
-        </div>
+      <div className="ingredients"> 
+        <ul className="ingredients-left">
+            <IngredientItem amount="1 1/2 cups" name="milk" />
+            <IngredientItem amount="1/2 tsp" name="pink salt" />
+            <IngredientItem amount="1 lb" name="Black Mission Figs" />
+            <IngredientItem amount="1/2 cup" name="mascarpone" />
+            <IngredientItem amount="1/2 cup" name="brown sugar" />
+            <IngredientItem amount="2-4 tbsp" name="water" />
+        </ul>
+        <ul className="ingredients-right">
+            <IngredientItem amount="1/3 cup" name="granulated sugar" />
+            <IngredientItem amount="2" name="egg yolks" />
+            <IngredientItem amount="1 1/2 cups" name="heavy cream" />
+            <IngredientItem amount="1" name="lemon, juiced" />
+            <IngredientItem amount="2 tbsp" name="butter" />
+            <IngredientItem amount="1 cup" name="honey roasted pecans, roughly chopped" />
+        </ul>
+    </div>
       )
     }
   }
+
+class Body extends React.Component {
+  render() {
+    return (
+      <div>
+      <ImageSection />
+      <Recipe />
+      <IngredientsList />
+      </div>
+    )
+  }
+}
 
 class Footer extends React.Component {
   render() {
     return (
       <div>
+        <div className="break"></div>
           <footer>
+            <article className="author">
+              <img className="author-pic" src="van-pic.png" alt="Author" />
+                <div className="author-info">
+                  <h5>
+                    Vanessa Stevenson
+                  </h5>
+                  <p>
+                    Food enthusiast, photography fan. Add a pinch of raw foodism and that's pretty much who I am.
+                  </p>
+                </div>
+              <button class="share-btn">
+                SHARE RECIPE
+              </button>
+            </article>
             <img src="small-logo.png" alt="Small logo"/>
             <caption>
-            Delicious 2013 | All Rights Reserved. Proudly published with Ghost.
+              Delicious 2013 | All Rights Reserved. Proudly published with Ghost.
             </caption>
           </footer>
       </div>
@@ -128,11 +161,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Title />
-      <ImageSection />
-      <Recipe />
-      <Ingredients />
-      <Author />
+      <Body />
       <Footer />
     </div>
   );

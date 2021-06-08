@@ -10,9 +10,51 @@ body {
     font-size: 12px;
 }
 
+/* .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+} */
+
+.small-logo {
+    height: 40px;
+    width: 40px;
+}
+
+.logo-container-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    margin-left: 8px;
+    margin-right: 500px;
+}
+
+.sm-logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 h1, h3 {
     margin: 0;
     line-height: 100%;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 h1 {
@@ -25,30 +67,22 @@ h3 {
     font-size: 8px;
 }
 
-.sm-logos-1 {
+.button-list {
     display: grid;
-    grid-template-columns: 18px 18px 18px 18px 18px 18px;
-    grid-gap: 2px;
+    grid-template-columns: 18px 18px 18px 18px 18px 18px 18px 18px;
+    grid-gap: 10px;
 }
 
-.sm-logos-2 {
-    display: grid;
-    grid-template-columns: 18px 18px;
-    grid-gap: 2px;
-    margin-left: 8px;
-
-}
-
-h2 {
-    margin-bottom: 0;
-    font-family: sans-serif;
-    font-size: 32px;
+h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
     font-weight: bold;
-
 }
 
 h6 {
     color: silver;
+    font-size: 10px;
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -60,16 +94,21 @@ p {
 }
 
 .author p {
+    display: flex;
     margin: 0px;
+    flex-direction: column;
+    margin-right: 20px;
 }
 
-.author section {
-    margin: 0 20px;
+.author-pic {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
 }
 
-.recipe {
+.ingredients {
     font-size: 16px;
-    background-image: url(./list-bg.png);
+    background-image: url(./assets/list-bg.png);
     background-size: cover;
     display: flex;
     justify-content: space-around;
@@ -78,11 +117,24 @@ p {
     line-height: 160%;
 }
 
+.ingredients-left {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.ingredients-right {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
 .author {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 footer{
@@ -96,16 +148,118 @@ footer{
     text-shadow: rgb(168, 165, 165);
 }
 
-footer caption{
+.author-info {
+    display: block;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+}
+
+footer caption {
     margin: 0;
 }
 
-button {
+.share-btn {
     font-family: sans-serif;
     height: 40px;
     width: 150px;
     background-color: sienna;
     color: white;
     text-transform: uppercase;
-    border: none;
 }
+
+.fb {
+    background-image: url(./assets/fb-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.twit {
+    background-image: url(./assets/twit-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.gp {
+    background-image: url(./assets/gp-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.insta {
+    background-image: url(./assets/insta-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.flic {
+    background-image: url(./assets/flic-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.pint {
+    background-image: url(./assets/pint-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.rss {
+    background-image: url(./assets/rss-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.mail {
+    background-image: url(./assets/mail-icon.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.print {
+    height: 18px;
+    margin-left: 680px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.break {
+    background-image: url(./assets/hr-img.png);
+    width: 100%;
+    height: 12px;
+    margin: 20px 0px;
+}
+
+.biggest-head {
+    display: flex;
+    flex-direction: column;
+}
+
